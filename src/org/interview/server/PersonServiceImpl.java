@@ -21,6 +21,8 @@ public class PersonServiceImpl extends RemoteServiceServlet implements PersonSer
         returnValue.setLastName("Lannister");
         returnValue.setPersonID(1);
         
+        returnValue.setName("Gwt User");
+        
         return returnValue;
     }
     
