@@ -13,6 +13,8 @@ h1 {
 .sendButton {
   display: block;
   font-size: 16pt;
+  color:#ff0000;
+  background-color: #ff0000;
 }
 
 .red {
