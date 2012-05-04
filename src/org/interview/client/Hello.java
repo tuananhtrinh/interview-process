@@ -120,6 +120,37 @@ public class Hello implements EntryPoint {
             }
         });
         
+        // Add a handler to clear person information
+        clearPersonButton.addClickHandler(new ClickHandler() {
+            public void onClick(ClickEvent event) {
+                nameField.setText("");
+            	personId.setText("");
+                personName.setText("");
+            }
+        });
+        
+     // Add a handler to count number of call message successfully sent to the server
+        countCallButton.addClickHandler(new ClickHandler() {
+            public void onClick(ClickEvent event) {
+            	
+            	//countCallService.countCall(numberOfCompletedCall, callback);
+            	System.out.println("The number of successfully message is sent to server is:" + numberOfCompletedCall);  
+                countCallLabel.setText(Integer.toString(numberOfCompletedCall));
+              
+            }
+        });  
+        
+     // Add a handler to get Person information
+        getPersonButton.addClickHandler(new ClickHandler() {
+            public void onClick(ClickEvent event) {
+            	
+            	
+            	System.out.println("Dispplay User Information");  
+                
+              
+            }
+        });  
+        
 
         // Create a handler for the sendButton and nameField
         class MyHandler implements ClickHandler, KeyUpHandler {
@@ -147,7 +178,7 @@ public class Hello implements EntryPoint {
                 errorLabel.setText("");
                 String textToServer = nameField.getText();
                 if (!FieldVerifier.isValidName(textToServer)) {
-                    errorLabel.setText("Please enter more than 4 caracters");
+                    errorLabel.setText("The name must be at least 4 characters long");
                     return;
                 }
 
@@ -173,6 +204,7 @@ public class Hello implements EntryPoint {
                                 serverResponseLabel.setHTML(result);
                                 dialogBox.center();
                                 closeButton.setFocus(true);
+                                numberOfCompletedCall;
                             }
                         });
             }
